@@ -1,0 +1,659 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+
+}
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color:#2CA4BA;
+    scroll-behavior: smooth;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content:start;
+    gap:45vw;
+    align-items: center;
+    padding: 15px;
+    background-color:#4D797E;
+    border-bottom: 1px solid black;
+}
+
+.gym_name h1 {
+    padding-left:20px;
+    font-size: 40px;
+    font-weight: bold;
+    color:white;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding-right:10px;
+    color: black;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vw;
+}
+
+.nav-links li {
+    font-size: 19px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color:white;
+}
+
+.afternav{
+    background-image: url('../bg.jpg');
+    background-size: cover;
+    height:652px;
+    display: flex;
+    flex-direction: row-reverse;
+    width:100%;
+    
+}
+
+.afternav .imagebox{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.afternav .imagebox img{
+    border-radius:5%;
+    width:80%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afternav .tagline{
+    padding-left:10%;
+    display:flex;
+    justify-content: center;
+    align-items: start;
+    width: 60%;
+    flex-direction:column;
+}
+
+.afternav .tagline #line{
+    font-family: 'Playfair Display', serif;
+    white-space: nowwrap;
+    color:lightgreen;
+    font-size:60px;
+    font-weight: bold;
+}
+
+.afternav .tagline .btns{
+    gap: 1vw;
+    margin-top: 2vw;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center; 
+    justify-content : center; 
+    overflow:hidden;
+}
+
+.btns button {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    color: white;
+    padding: 0.5vw 0.6vw;
+    border: none;
+    font-size: 1.2vw;
+    font-weight: 700;
+    position: relative;
+    border: 0.3vw solid lightgreen;
+    z-index: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+ul li .btns button{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    color: white;
+    padding: 0.5vw 0.6vw;
+    border: none;
+    font-size: 1vw;
+    font-weight: 700;
+    position: relative;
+    border: 0.3vw solid skyblue;
+    border-radius:5%;
+    z-index: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+ul li .btns button::after{
+    background-color: skyblue; 
+    
+}
+
+.btns button::after{
+    content: "";
+    height: 5vw;
+    width:5vw;
+    border-radius: 50%;
+    position: absolute;
+    background-color: lightgreen; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50% ) scale(0);
+    transition: all linear 0.3s;
+    z-index: -1;
+}
+.btns button:hover::after{
+    transform: translate(-50%, -50% ) scale(2);
+}
+.btns button:hover{
+    color: rgba(0, 0, 0, white);
+}
+
+/* Merchandise */
+
+.merchSection {
+    height: auto;
+    margin-top: 30px;
+}
+
+.merchSection h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: lightgreen;
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        -2px -2px 8px rgba(255, 255, 255, 0.8), 
+        3px 3px 10px rgba(44, 164, 186, 0.6); 
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.merchSection h1:hover {
+    transform: scale(1.05); 
+    text-shadow: 
+        3px 3px 8px rgba(0, 0, 0, 0.5),  
+        -3px -3px 12px rgba(255, 255, 255, 0.9), 
+}
+
+
+.merhname{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 4vw;
+    /* padding-bottom: 10px; */
+    width: fit-content;
+    text-align: left;
+    color: lightgreen; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+    border-bottom: 3px solid #2CA4BA;
+}
+
+.merchandiseProducts{
+    background-image: url('../bg-merch.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 20px 50px;
+    margin-bottom: 30px;
+    padding: 20px; 
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 600px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.merchandiseProducts::-webkit-scrollbar {
+    display: none;  
+}
+.merchandiseProducts {
+    -ms-overflow-style: none;   
+    scrollbar-width: none;  
+}
+
+.merchandiseProducts .merchandise{
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 25%; */
+    background-color: #4D797E;
+    height: 90%;
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.merchandiseProducts .merchandise:hover {
+    transform: translateY(-10px);  
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
+}
+
+
+.merchandiseProducts .merchandise .mercimage{
+    height:85%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.merchandiseProducts .merchandise .mercimage img{
+    height:100%;
+    width:300px;
+    object-fit:contain;
+    padding:10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.merchandiseProducts .merchandise .price {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.merchandiseProducts .merchandise .price h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #F0E68C; 
+}
+
+.merchandiseProducts .merchandise .price h3 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #FFD700; 
+}
+
+/* productslists */
+.productslist {
+    background-image: url('../bg-merch.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 20px 50px;
+    padding: 20px; 
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 600px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    border-radius: 15px;  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.productslist::-webkit-scrollbar {
+    display: none;  
+}
+.productslist {
+    -ms-overflow-style: none;   
+    scrollbar-width: none;   
+}
+
+.productslist .products {
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    background-color: #4D797E;
+    height: 90%;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.productslist .products:hover {
+    transform: translateY(-10px);  
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);  
+}
+
+.productslist .products .proimage {
+    height: 85%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.productslist .products .proimage img {
+    height: 100%;
+    width:300px;
+    object-fit:contain;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.productslist .products .price {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.productslist .products .price h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #F0E68C;  
+}
+
+.productslist .products .price h3 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #FFD700;  
+}
+
+/* Bmiexercise */
+.Bmiandexcise {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f4f4f9;
+    width: 80%;  
+    margin: 60px auto;  
+    padding: 30px; 
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    height: 400px; 
+}
+
+
+.Bmilink, .exer {
+    width: 40%; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: squeeze 0.6s ease-in-out;  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Bmilink:hover, .exer:hover {
+    animation: none; 
+    transform: scale(1.05);  
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    background-color: #e3f2fd; 
+}
+
+@keyframes squeeze {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.95); 
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.Bmilink h1, .exer h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Bmilink h3, .exer h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.Bmilink a, .exer a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    position: relative;
+}
+
+.Bmilink a::after, .exer a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007BFF;
+    transition: width 0.3s ease;
+}
+
+.Bmilink a:hover::after, .exer a:hover::after {
+    width: 100%;
+}
+
+.bmi-img, .excer-img {
+    margin: 20px 0;
+}
+
+.bmi-img img, .excer-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;  
+    max-height: 200px;  
+}
+
+.bmi-img img:hover, .excer-img img:hover {
+    transform: scale(1.05); 
+}
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-logo h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #f4f4f4;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f4f4f4;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #00aaff;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icon {
+    color: #f4f4f4;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #00aaff;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
+
+@media (max-width: 320px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .gym_name h1{
+        font-size:32px;
+        padding-left: 1px;
+        padding-top: 1px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        /* background-color: #d1fae5; */
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 2px solid #1f2634;
+    }
+}
+
+
+@media (min-width: 321px) and (max-width: 426px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .gym_name h1{
+        padding-left: 1px;
+        padding-top: 1px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        /* background-color: #d1fae5; */
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 2px solid #1f2634;
+    }
+}
+
+@media (min-width: 427px) and (max-width: 769px) {
+    .navbar {
+        gap:30%;
+    }
+
+    .gym_name h1 {
+        font-size: 35px;
+        padding-left:10px;
+    }
+    
+    .nav-links li {
+        font-size: 16px;
+        font-weight: lighter;
+    }
+    
+
+}
+
+@media (min-width: 770px) and (max-width: 1024px) {
+    .navbar {
+        gap:45vw;
+    }
+
+    .gym_name h1 {
+        font-size: 35px;
+        padding-left:10px;
+    }
+    
+    .nav-links li {
+        font-size: 16px;
+        font-weight: lighter;
+    }
+    
+
+}
+
+
