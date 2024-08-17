@@ -12,6 +12,18 @@ html,body {
     scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
 .main{
     height: 100%;
     width: 100%;
@@ -61,8 +73,6 @@ html,body {
 }
 
 .afternav{
-    background-image: url('../bg.jpg');
-    background-size: cover;
     height:652px;
     display: flex;
     flex-direction: row-reverse;
@@ -76,12 +86,10 @@ html,body {
     align-items: center;
     width: 40%;
     height:100%;
-    object-fit: cover;
     overflow: hidden;
 }
 
 .afternav .imagebox img{
-    border-radius:5%;
     width:80%;
     height: 100%;
     object-fit: cover;
@@ -91,6 +99,7 @@ html,body {
     padding-left:10%;
     display:flex;
     justify-content: center;
+    margin-bottom:40px;
     align-items: start;
     width: 60%;
     flex-direction:column;
@@ -207,8 +216,7 @@ ul li .btns button::after{
     width: fit-content;
     text-align: left;
     color: lightgreen; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
-    border-bottom: 3px solid #2CA4BA;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .merchandiseProducts{
@@ -374,7 +382,7 @@ ul li .btns button::after{
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     gap: 20px;
-    height: 400px; 
+    height: 405px; 
 }
 
 
@@ -466,8 +474,10 @@ ul li .btns button::after{
 .footer {
     background-color: #333;
     color: #fff;
+    /* background-color:red; */
     padding: 40px 20px;
     text-align: center;
+    margin-bottom: 0;
 }
 
 .footer-container {
@@ -475,7 +485,7 @@ ul li .btns button::after{
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .footer-logo {
@@ -574,9 +584,8 @@ ul li .btns button::after{
         top: 60px;
         left: 0;
         width: 100%;
-        /* background-color: #d1fae5; */
     }
-
+    
     .nav-links.show {
         display: flex;
     }
@@ -585,6 +594,10 @@ ul li .btns button::after{
         text-align: center;
         padding: 10px 0;
         border-bottom: 2px solid #1f2634;
+    }
+
+    .nav-links li a{
+        color:black;
     }
 }
 
